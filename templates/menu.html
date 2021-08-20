@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Demo Home | Info-Convert OCR System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css' ) }}">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+         <img src = "{{url_for ('static', filename = './img/logo.png')}}"/>
+        <strong><nav>
+          <ul id="menuhorizontal">
+           <li><a href="{{ url_for('upload_file') }}">Home</a></li>
+           <li><a href="{{ url_for('file_normal_upload') }}">Convert image to text </a></li>
+           <li><a href="{{ url_for('file_document_upload') }}">Validate Identity Card</a></li>
+              <li><a href="{{ url_for('dui_validator') }}">Dui Validator (SV)</a></li>
+           <li><a href="{{ url_for('file_check_life') }}">Test of life</a></li>
+              <li><a href="{{ url_for('uploader') }}">Api</a></li>
+</ul>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+      <img src = "{{url_for ('static', filename = './img/ocr_home.png')}}"/>
+    </div>
+  </body>
+</html>

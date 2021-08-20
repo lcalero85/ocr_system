@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check life Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css' ) }}">
+</head>
+<body>
+<div class="result3">
+     {% if result %}
+   <h2> Check Life Result. </h2>
+      <h3> Result: </h3>
+    <p class="data">
+        <pre>
+         <code>
+            <h2> {{result}}</h2>  <br>
+         </code>
+
+        </pre>
+
+    </p>
+    {%else%}
+      <h2> Errors Results </h2>
+      <p>Could not compare information from the image</p>
+      <p>Try better quality images</p>
+    {% endif %}
+    <a class="boton2" href="javascript:history.back()">Back to OCR converter</a><br><br>
+    <a class="boton" href="{{ url_for('upload_file') }}"> Back to Home</a>
+</div>
+
+</body>
+</html>

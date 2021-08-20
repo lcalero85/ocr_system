@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OCR Document Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css' ) }}">
+</head>
+<body>
+<div class="result2">
+     {% if result and result2 %}
+    <h2> Successful Convertion . </h2>
+      <h3>Detail: </h3>
+    <p class="data">
+        <pre>
+         <code>
+              {{result2}} <br>
+         </code>
+
+        </pre>
+
+    </p>
+    {%else%}
+
+      <h2> Error in convertion </h2>
+      <p>Could not extract information from the document</p>
+      <p>Try better quality images</p>
+    {% endif %}
+    <a class="boton2" href="javascript:history.back()">Back to OCR converter</a>
+    <a class="boton2" href="{{ url_for('upload_file') }}">Back to Home</a>
+
+</div>
+<div class="result">
+     {% if result %}
+   <h2> Successful Convertion. </h2>
+      <h3> Plan text: </h3>
+    <p class="data">
+        <pre>
+         <code>
+              {{result}} <br>
+         </code>
+
+        </pre>
+
+    </p>
+    {%else%}
+      <h2> Error in convertion </h2>
+      <p>Could not extract information from the document</p>
+      <p>Try better quality images</p>
+    {% endif %}
+    <a class="boton2" href="javascript:history.back()">Back to OCR converter</a>
+    <a class="boton2" href="{{ url_for('upload_file') }}">Back to Home</a>
+
+</div>
+
+</body>
+</html>

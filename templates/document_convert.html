@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>Demo | Validate Card Identity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css' ) }}">
+  </head>
+  <body>
+   <img src = "{{url_for ('static', filename = './img/logo.png')}}"/>
+   <strong><nav>
+          <ul id="menuhorizontal">
+           <li><a href="{{ url_for('upload_file') }}">Home</a></li>
+           <li><a href="{{ url_for('file_normal_upload') }}">Convert image to text </a></li>
+           <li><a href="{{ url_for('file_document_upload') }}">Validate Identity Card</a></li>
+               <li><a href="{{ url_for('dui_validator') }}">Dui Validator (SV)</a></li>
+           <li><a href="{{ url_for('file_check_life') }}">Test of life</a></li>
+              <li><a href="{{ url_for('uploader') }}">Api</a></li>
+</ul>
+
+      </nav></strong><br>
+    <div class="demo">
+    <h2>Validate Identity Card</h2>
+        <label>Select card id image to convert :</label><br>
+    <form action="/upload" method="POST" class="" enctype="multipart/form-data">
+    <input type="file" name="archivo" class="custom-input-file col-md-6 col-sm-6 col-xs-6" required>
+      <br>
+    <input type="submit" value="Process" class="boton">
+      <input type="reset" value="Refresh" class="boton">
+    </form>
+
+      <br>
+      <a class="boton2" href="{{ url_for('upload_file') }}"> Back to Home</a>
+    </div>
+
+  </body>

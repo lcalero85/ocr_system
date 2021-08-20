@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>Demo | Dui Validator (SV) </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css' ) }}">
+  </head>
+  <body>
+   <img src = "{{url_for ('static', filename = './img/logo.png')}}"/>
+   <strong><nav>
+          <ul id="menuhorizontal">
+           <li><a href="{{ url_for('upload_file') }}">Home</a></li>
+           <li><a href="{{ url_for('file_normal_upload') }}">Convert image to text </a></li>
+           <li><a href="{{ url_for('file_document_upload') }}">Validate Identity Card</a></li>
+               <li><a href="{{ url_for('dui_validator') }}">Dui Validator (SV)</a></li>
+           <li><a href="{{ url_for('file_check_life') }}">Test of life</a></li>
+              <li><a href="{{ url_for('uploader') }}">Api</a></li>
+</ul>
+
+      </nav></strong><br>
+    <div class="demo">
+    <h2>Dui Validator</h2>
+        <p>*Only applies to El Salvador</p>
+        <p>*This script verifies that the number has the correct composition to be a valid dui, not that it exists</p>
+    <form action="/duis_validator" method="POST" class="" enctype="multipart/form-data">
+        <label> Enter your Dui Number      * Example  00322123-1</label><br>
+    <input type="text" name="dui" class="custom-input-file col-md-6 col-sm-6 col-xs-6" required><br>
+
+      <br>
+    <input type="submit" value="Process" class="boton">
+      <input type="reset" value="Refresh" class="boton">
+    </form>
+      <br>
+      <a class="boton2" href="{{ url_for('upload_file') }}"> Back to Home</a>
+    </div>
+
+  </body>
